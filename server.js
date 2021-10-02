@@ -1,5 +1,6 @@
 //import library 
-const express = require("express")
+const express = require("express");
+const drinks = require("./models/drinks");
 
 //creating the application object 
 const app = express();
@@ -13,6 +14,10 @@ app.get("/", (req,res) =>{
     res.send("Welcome to the Gitpub App!")
 })
 
+//drinks route 
+app.get("/drinks", (req, res) => {
+    res.render("drinks_index.ejs", {allDrinks: drinks});
+});
 
 
 
