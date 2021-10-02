@@ -14,12 +14,15 @@ app.get("/", (req,res) =>{
     res.send("Welcome to the Gitpub App!")
 })
 
-//drinks route 
+//drinks route index 
 app.get("/drinks", (req, res) => {
     res.render("drinks_index.ejs", {allDrinks: drinks});
 });
 
-
+//drinks route show
+app.get("/drinks/:id", (req, res) => {
+    res.send(req.params.id)
+})
 
 
 
